@@ -66,11 +66,8 @@ function mathMagic(name,destination,frequency,time){
     return trainToBeAdded;
 }
 dataRef.ref().on("child_added", function(childSnapshot) {
-     debugger; 
-
     var storedTrain = mathMagic(childSnapshot.val().name,childSnapshot.val().destination,childSnapshot.val().frequency,childSnapshot.val().time);
-   updateDisplay(storedTrain); 
-   
+   updateDisplay(storedTrain);
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
