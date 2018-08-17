@@ -68,3 +68,13 @@ dataRef.ref().on("child_added", function(childSnapshot) {
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
+  setInterval( function(){
+    $("#trainList").empty();
+    dataRef.ref().on("child_added", function(childSnapshot) {
+        var storedTrain = mathMagic(childSnapshot.val().name,childSnapshot.val().destination,childSnapshot.val().frequency,childSnapshot.val().time);
+       updateDisplay(storedTrain);
+      }, function(errorObject) {
+        console.log("Errors handled: " + errorObject.code);
+      });  
+
+  },60000)
