@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Train Schedule</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+ 
+</head>
+
+<body>
+
+
+  <div class="container">
+      <div class="jumbotron text-center p-5 " style="background:saddlebrown;color: white">
+            <h1 class="display-4" style="font-weight:450" > <i class="far fa-newspaper"></i> Train Schedule</h1>
+            <h2>Choo Choo. Chee Chee.</h2>
+      </div>
+      <div class="card  my-3" style="border:solid steelblue; border-width: 2px;" >
+                
+        <div class="card-header" style="background:steelblue; color:white"> 
+             <i class="fa fa-list-alt"></i> Current Train Schedule
+        </div>
+        <div class="card m-3" id="topArticles">
+                <div class="card"> 
+                 <!-- table goes here -->
+                 <table class="table" >
+                    <thead>
+                      <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (mins)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                      </tr>
+                    </thead>
+                    <tbody id="trainList">
+              
+                    </tbody>
+                  </table>
+               </div>
+        </div>
+    </div>
+    <div class="card pb-2" style="border:solid steelblue; border-width: 2px;">
+        <div class="card-header mg-lg " style="background:steelblue;color: whitesmoke ">
+          <i class="fa fa-train" aria-hidden="true"></i> Add Train
+        </div>
+        <div class="container mt-3">
+            <form>
+                <div class="form-group">
+                        <label for="addedTrainName" >Train Name</label>
+                        <input id="addedTrainName" type="text" class="form-control" placeholder="Thomas The Tank Engine">
+                </div>
+                <div class="form-group"> 
+                    <label for="addedDestination">Destination</label>
+                    <input id="addedDestination" type="text" class="form-control" placeholder="Promise Land">    
+                </div>
+                <div class="form-group">
+                        <!-- need to be change to a dropdown box -->
+                        <label for="addedTime" >Frist Train Time (HH:mm - military time)</label>
+                        <input type="text" class="form-control" id="addedTime" placeholder="15:15">
+                </div>
+                <div class="form-group">
+                        <!-- need to be change to a dropdown box -->
+                        <label for="addedFrequency" >Frequency</label>
+                        <input type="text" class="form-control" id="addedFrequency" placeholder="15">
+                </div>
+                <!-- buttoms -->
+                <button id="toAddButton" class="btn btn-dark" type="submit"> <i class="fa fa-plus-circle pr-1"></i> Add </button>
+             </form>
+
+        </div>
+      </div>
+        
+  </div>
+    <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+    <script src="assets\Javascript\javascript.js"></script>
+    
+</body>
+
+</html>
