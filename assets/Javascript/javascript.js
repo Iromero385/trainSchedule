@@ -1,4 +1,3 @@
-
 var config = {
     apiKey: "AIzaSyBeAXTYszBs_aIy5un3KPwahhI4BtGlfPM",
     authDomain: "trainschedule-c3172.firebaseapp.com",
@@ -31,7 +30,6 @@ function updateDisplay(trainObject){
         addedRow.append(addedEntry);
     }
     $("#trainList").append(addedRow);
-
 }
 $("#toAddButton").on("click",function(event){
     event.preventDefault();
@@ -40,7 +38,6 @@ $("#toAddButton").on("click",function(event){
     var destination = $("#addedDestination").val().trim();
     var frequency = $("#addedFrequency").val().trim();
     var time = $("#addedTime").val().trim(); 
-
     dataRef.ref().push({
         
         name: name,
